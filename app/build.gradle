@@ -39,7 +39,7 @@ android {
             externalNativeBuild {
                 cmake {
                     arguments '-DANDROID_PLATFORM=android-16', '-DANDROID_TOOLCHAIN=clang',
-                            '-DANDROID_ARM_NEON=TRUE', '-DANDROID_STL=gnustl_static',
+                            '-DANDROID_ARM_NEON=TRUE', '-DANDROID_STL=c++_shared',
                             "-DPATH_TO_MEDIACORE:STRING=${native_sdk_path}"
                     cFlags '-O3', '-DGL_GLEXT_PROTOTYPES', '-DEGL_EGLEXT_PROTOTYPES', '-fsigned-char', "-I${native_sdk_path}", '-Wformat','-mfpu=neon', '-mfloat-abi=softfp -frtti' // full optimization, char data type is signed
                     // 编译优化，设置函式是否能被 inline 的伪指令长度
@@ -56,7 +56,7 @@ android {
             externalNativeBuild {
                 cmake {
                     arguments '-DANDROID_PLATFORM=android-16', '-DANDROID_TOOLCHAIN=clang',
-                            '-DANDROID_ARM_NEON=TRUE', '-DANDROID_STL=gnustl_static',
+                            '-DANDROID_ARM_NEON=TRUE', '-DANDROID_STL=c++_shared',
                             '-DCMAKE_BUILD_TYPE=RelWithDebInfo',
                             "-DPATH_TO_MEDIACORE:STRING=${native_sdk_path}"
                     cFlags '-O3', '-DGL_GLEXT_PROTOTYPES', '-DEGL_EGLEXT_PROTOTYPES', '-fsigned-char', "-I${native_sdk_path}", '-Wformat','-mfpu=neon', '-mfloat-abi=softfp -frtti' // full optimization, char data type is signed
@@ -80,6 +80,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:support-v4:26.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'

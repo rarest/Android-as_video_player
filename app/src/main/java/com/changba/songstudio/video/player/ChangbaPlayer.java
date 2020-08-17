@@ -34,7 +34,7 @@ public class ChangbaPlayer extends MediaCodecDecoderLifeCycle {
 	}
 
 
-	public native void onSurfaceCreated(final Surface surface);
+	public native void onSurfaceCreated(final Surface surface, int a, int b);
 
 	public native void onSurfaceDestroyed(final Surface surface);
 

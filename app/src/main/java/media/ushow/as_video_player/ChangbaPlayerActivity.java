@@ -217,7 +217,7 @@ public class ChangbaPlayerActivity extends Activity implements OnSeekBarChangeLi
 				};
 				playerController.setUseMediaCodec(false);
 				int width = getWindowManager().getDefaultDisplay().getWidth();
-				String path = "/mnt/sdcard/a_songstudio/huahua.flv";
+				String path = "/mnt/sdcard/DCIM/Camera/20200814_134312.mp4";
 				playerController.init(path, holder.getSurface(), width, width, new OnInitializedCallback() {
 					public void onInitialized(OnInitialStatus onInitialStatus) {
 						// TODO: do your work here
@@ -229,7 +229,7 @@ public class ChangbaPlayerActivity extends Activity implements OnSeekBarChangeLi
 			}
 
 			else {
-				playerController.onSurfaceCreated(holder.getSurface());
+				playerController.onSurfaceCreated(holder.getSurface(), 0, 0);
 			}
 		}
 

@@ -1,7 +1,7 @@
 #include "egl_share_context.h"
 
 #define LOG_TAG "EglShareContext"
-EglShareContext* EglShareContext::instance_ = new EglShareContext();
+EglShareContext* EglShareContext::instance_ = nullptr;
 
 EglShareContext::EglShareContext() {
 	init();

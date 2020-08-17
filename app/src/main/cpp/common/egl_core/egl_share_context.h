@@ -3,11 +3,14 @@
 
 #include "./egl_core.h"
 
+
+
 class EglShareContext {
 public:
 	~EglShareContext() {
 	}
 	static EGLContext getSharedContext() {
+		if(instance_ == nullptr) instance_ = new EglShareContext();
 		if (instance_->sharedDisplay == EGL_NO_DISPLAY){
 			instance_->init();
 		}
